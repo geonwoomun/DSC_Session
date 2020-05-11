@@ -1,2 +1,25 @@
 dscTest/node_modules
 dscfront/node_modules
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+
+dscfront/.pnp
+dscfront/.pnp.js
+
+# testing
+dscfront/coverage
+
+# production
+dscfront/build
+
+# misc
+dscfront/.DS_Store
+dscfront/.env.local
+dscfront/.env.development.local
+dscfront/.env.test.local
+dscfront/.env.production.local
+
+dscfront/npm-debug.log*
+dscfront/yarn-debug.log*
+dscfront/yarn-error.log*
