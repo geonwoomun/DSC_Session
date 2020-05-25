@@ -1,12 +1,26 @@
 import React from 'react';
-import CustomButton from './components/CustomButton';
+import styled from 'styled-components';
+import { Input } from 'antd';
+import 'antd/dist/antd.css';
+
+const Container = styled.div`
+  background: skyblue;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CustomInput = styled(Input)`
+  width: 400px;
+  height: 30px;
+`;
+
 function App() {
   return (
-    <div className="App">
-     <CustomButton>
-       칠드런
-       </CustomButton>
-    </div>
+    <Container>
+      <CustomInput />
+    </Container>
   );
 }
 
