@@ -1,25 +1,68 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Input } from 'antd';
+import { Input, Button, Modal } from 'antd';
 import 'antd/dist/antd.css';
 
+const { confirm } = Modal;
+
 const Container = styled.div`
-  background: skyblue;
-  height: 100vh;
+  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background: #468fe1;
+`;
+
+const Title = styled.div`
+  margin-bottom: 40px;
+  font-size: 3rem;
+  color: white;
+  font-family: 'Lobster', cursive;
+  text-shadow: 1px 1px 4px gray;
+`;
+
+const RowSpan = styled.div`
+  display: flex;
+  height: 40px;
+  margin-bottom: 200px;
+`;
+
+const ConvertButton = styled(Button)`
+  height: 100%;
+  background: #f7a62d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 1px 1px 4px gray;
 `;
 
 const CustomInput = styled(Input)`
-  width: 400px;
-  height: 30px;
+  width: 600px;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px gray;
 `;
+
+function showConfirm() {
+  confirm({
+    title: '변경된 URL',
+    content: '기존 url: , \n 변경된 url:',
+    onOk() {},
+    onCancel() {},
+  });
+}
 
 function App() {
   return (
     <Container>
-      <CustomInput />
+      <Title>DSC Short URL</Title>
+      <RowSpan>
+        <CustomInput size='large' />
+        <ConvertButton onClick={showConfirm}>Convert</ConvertButton>
+      </RowSpan>
     </Container>
   );
 }
